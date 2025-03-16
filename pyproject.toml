@@ -1,7 +1,7 @@
 [project]
-name = "repl-nix-workspace"
+name = "temperature-dashboard"
 version = "0.1.0"
-description = "Add your description here"
+description = "Painel de Análise de Temperaturas com Streamlit e PostgreSQL"
 requires-python = ">=3.11"
 dependencies = [
     "numpy>=2.2.3",
@@ -12,3 +12,21 @@ dependencies = [
     "sqlalchemy>=2.0.39",
     "streamlit>=1.43.2",
 ]
+
+[tool.poetry]
+name = "temperature-dashboard"
+version = "0.1.0"
+description = "Painel de Análise de Temperaturas com Streamlit e PostgreSQL"
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+numpy = ">=2.2.3"
+pandas = ">=2.2.3"
+plotly = ">=6.0.0"
+psycopg2-binary = ">=2.9.10"
+python-dotenv = ">=1.0.1"
+sqlalchemy = ">=2.0.39"
+streamlit = ">=1.43.2"
+
+[tool.poetry.dev-dependencies]

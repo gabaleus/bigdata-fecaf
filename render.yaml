@@ -1,0 +1,20 @@
+services:
+  # Um serviço web para o aplicativo Streamlit
+  - type: web
+    name: temperature-dashboard
+    env: python
+    buildCommand: pip install poetry && poetry install
+    startCommand: streamlit run main.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.4
+      - key: DATABASE_URL
+        fromDatabase:
+          name: temperature-database
+          property: connectionString
+
+databases:
+  # Configuração de um banco de dados PostgreSQL
+  - name: temperature-database
+    plan: free
+    ipAllowList: []  # aceita conexões de qualquer lugar
