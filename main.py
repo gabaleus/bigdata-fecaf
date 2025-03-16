@@ -164,7 +164,8 @@ def main():
             st.write(df.head())
             
             st.subheader("Data Information")
-            buffer = pd.io.StringIO()
+            import io
+            buffer = io.StringIO()
             df.info(buf=buffer)
             s = buffer.getvalue()
             st.text(s)
